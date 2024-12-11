@@ -12,7 +12,7 @@ This repository contains the Helm chart for deploying the Hoppscotch application
 1. Add the Helm repository:
 
    ```bash
-   helm repo add hoppscotch https://your-helm-chart-repo.com
+   helm repo add hoppscotch https://karimali92.github.io/helmcharts/
    helm repo update
    ```
 
