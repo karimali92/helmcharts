@@ -1,6 +1,3 @@
-# hoppscotch-helm
-Helm chart for deploying the Hoppscotch community edition application on Kubernetes. This chart simplifies the deployment and management of Hoppscotch, a free, open-source API development ecosystem, by providing customizable configuration options and Kubernetes-native integration.
-
 # Hoppscotch Helm Chart
 
 This repository contains the Helm chart for deploying the Hoppscotch application, an open-source API development ecosystem, on Kubernetes.
@@ -79,6 +76,35 @@ The following table lists the configurable parameters of the chart and their def
 | `affinity`                   | Affinity rules for pod scheduling                          | `{}`                                    |
 | `ContainerEnv`               | Additional environment variables for the container          | `[]`                                    |
 | `env`                        | Application-specific environment variables                  | `{}`                                    |
+
+## Required Configuration
+
+To ensure the application runs correctly, you must provide the following environment variables under `ContainerEnv`:
+
+```yaml
+ContainerEnv:
+  - name: ENABLE_SUBPATH_BASED_ACCESS
+    value: "true"
+  - name: VITE_ALLOWED_AUTH_PROVIDERS
+    value: GITHUB
+  - name: VITE_BACKEND_GQL_URL
+    value: your-domain/backend/graphql
+  - name: VITE_BACKEND_WS_URL
+    value: wss://your-domain/backend/graphql
+  - name: VITE_BACKEND_API_URL
+    value: your-domain/backend/v1
+  - name: VITE_ADMIN_URL
+    value: your-domain/admin
+```
+
+Additionally, you can provide other application-specific environment variables under `env`:
+
+```yaml
+env:
+  DATABASE_URL=postgresql://postgres:testpass@hoppscotch-db:5432/hoppscotch
+```
+
+For the complete list of available environment variables, refer to the [`.env.example` file](https://github.com/hoppscotch/hoppscotch/blob/main/.env.example).
 
 ## Customization
 
