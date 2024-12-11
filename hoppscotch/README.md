@@ -1,3 +1,4 @@
+[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/hoppscotch)](https://artifacthub.io/packages/search?repo=hoppscotch)
 # Hoppscotch Helm Chart
 
 This repository contains the Helm chart for deploying the Hoppscotch application, an open-source API development ecosystem, on Kubernetes.
