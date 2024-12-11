@@ -1,0 +1,9 @@
+apiVersion: v2
+name: hoppscotch
+description: A Helm chart for hoppscotch app community edition
+
+type: application
+
+version: 0.1.0
+
+appVersion: "2024.11.0"
